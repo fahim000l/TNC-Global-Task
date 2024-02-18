@@ -1,3 +1,33 @@
+This project is based on Front-End Task
+
+#######################
+Project Features
+#######################
+
+1. User can see varius meals , it's recipe and other details
+2. User can see various alcoholic/non-alcoholic cocktail and drinks and some instructions related to it.
+3. User can add their prefered meals or cocktail/drink to the cart or remove it from the cart.
+
+###########################
+Procedure
+###########################
+
+I steps are taken to complete this project:
+
+1. Finding a free public APi: There I have used several public APIs from Meal DB and Cocktail DB
+
+Links are provided bellow:
+
+Meal DB : https://www.themealdb.com/
+Cocktail DB : https://www.thecocktaildb.com/
+
+2. CodeBase :I have used the Next Js for building this application.
+3. CSS Framework : I have used Tailwind css framework for styling purpose.
+4. Component Library : Daisy UI and Material Ui are used as Pluged IN
+5. State Management : Redux Toolkit and React Redux has been used to create a global state of this project.
+6. Icons : Material Icons has been used for eye-catchy UI.
+7. API Fetching : I have used TanStack query to feth APIs
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
