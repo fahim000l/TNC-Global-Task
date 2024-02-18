@@ -10,7 +10,7 @@ const cart = () => {
   return (
     <Sub>
       {cart?.length > 0 ? (
-        <div className="w-full grid grid-cols-1 gap-2 min-h-screen">
+        <div className="w-full grid grid-cols-1 gap-2">
           {cart?.map((item) => (
             <CartCard item={item} />
           ))}

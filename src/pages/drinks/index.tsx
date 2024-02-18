@@ -38,7 +38,7 @@ const drinksPage = () => {
           fullWidth
           label={"Search drink by name"}
         />
-        <div className="grid lg:grid-cols-4 grid-cols-1 gap-3 mt-2">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-3 mt-2">
           {drinksLoading || !requiredDrinks
             ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((count) => (
                 <div key={count} className="flex flex-col gap-4 w-52">

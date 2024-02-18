@@ -29,9 +29,26 @@ export const cartSlice = createSlice({
       console.log(otherItems);
       console.log(payload);
     },
+    increment: ({ cart }, { payload }) => {
+      let requiredItem = cart?.find((item) => item?.productId === payload);
+      requiredItem.count += 1;
+      cart = cart?.filter((item) => item?.productId !== payload);
+      cart?.push(requiredItem);
+    },
+    decrement: ({ cart }, { payload }) => {
+      let requiredItem = cart?.find((item) => item?.productId === payload);
+      if (requiredItem?.count > 1) {
+        requiredItem.count -= 1;
+        cart = cart?.filter((item) => item?.productId !== payload);
+        cart?.push(requiredItem);
+      } else {
+        cart = cart?.filter((item) => item?.productId !== payload);
+      }
+    },
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, increment, decrement } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -41,7 +41,7 @@ const categoriesPage = () => {
           fullWidth
           label={"Search category by name"}
         />
-        <div className="grid lg:grid-cols-4 grid-cols-1 lg:gap-5 gap-3 mt-5">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 lg:gap-5 gap-3 mt-5 px-auto">
           {categoriesLoading || !requiredCategories
             ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((count: number) => (
                 <div key={count} className="skeleton w-52 h-52"></div>

@@ -17,7 +17,7 @@ export default function CategoryCard({ category }: props) {
       onClick={() => push(`/category/${category?.strCategory}`)}
       className="lg:transition lg:ease-in-out lg:delay-150 lg:hover:-translate-y-1 lg:hover:scale-110 lg:duration-300 cursor-pointer"
     >
-      <Card sx={{ minHeight: "280px", width: 250 }}>
+      <Card sx={{ minHeight: "280px", width: [250, 200, 250] }}>
         <CardCover>
           <img src={category?.strCategoryThumb} loading="lazy" alt="" />
         </CardCover>

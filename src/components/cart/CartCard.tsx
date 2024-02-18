@@ -6,12 +6,16 @@ import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
 import { Add, Remove, X } from "@mui/icons-material";
 import { IconButton, Chip } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { decrement, increment } from "@/app/features/cartSlice";
 
 interface props {
   item: any;
 }
 
 export default function CartCard({ item }: props) {
+  const dispatch = useDispatch();
+
   return (
     <Card
       variant="outlined"
@@ -35,11 +39,19 @@ export default function CartCard({ item }: props) {
           Price : ${item?.idDrink?.slice(0, 2) || item?.idMeal?.slice(0, 2)}
         </Typography>
         <div className="flex justify-start space-x-3 items-center">
-          <IconButton size="small" className="bg-[steelblue] text-white">
+          <IconButton
+            onClick={() => dispatch(increment(item?.productId))}
+            size="small"
+            className="bg-[steelblue] text-white"
+          >
             <Add />
           </IconButton>
           <Chip label={item?.count} />
-          <IconButton size="small" className="bg-[steelblue] text-white">
+          <IconButton
+            onClick={() => dispatch(decrement(item?.productId))}
+            size="small"
+            className="bg-[steelblue] text-white"
+          >
             <Remove />
           </IconButton>
         </div>
