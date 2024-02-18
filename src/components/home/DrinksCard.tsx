@@ -19,7 +19,7 @@ export default function DrinksCard({ drink }: props) {
   return (
     <Card
       onClick={() => push(`/drink-details/${drink?.idDrink}`)}
-      sx={{ width: 200 }}
+      sx={{ width: [260, 200, 200] }}
     >
       <div>
         <Typography level="title-lg">{drink?.strDrink}</Typography>

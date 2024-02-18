@@ -13,7 +13,7 @@ const Sub = ({ children }: props) => {
       <Header />
       <Stack spacing={2} direction="row" className="my-5">
         <SideNav />
-        <div className="divider divider-horizontal "></div>
+        <div className="lg:divider lg:divider-horizontal hidden"></div>
         {children}
       </Stack>
       {/* <div className="flex justify-evenly my-5">

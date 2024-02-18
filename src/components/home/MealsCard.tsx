@@ -23,7 +23,7 @@ export default function MealsCard({ meal }: props) {
   const { cart } = useSelector((state: RootStateType) => state.cart);
 
   return (
-    <Card sx={{ width: 200 }}>
+    <Card sx={{ width: [260, 200, 200] }}>
       <div>
         <Typography level="title-lg">
           {meal?.strMeal?.length > 10
