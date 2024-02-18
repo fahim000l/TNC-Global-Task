@@ -2,7 +2,7 @@ import { Button, Stack } from "@mui/material";
 import React from "react";
 import { DinnerDining, LocalBar, ShoppingCart } from "@mui/icons-material";
 import Link from "next/link";
-import { Chip } from "@mui/material";
+import { Chip, Badge } from "@mui/material";
 import { useSelector } from "react-redux";
 import { RootStateType } from "@/app/store";
 
@@ -31,8 +31,11 @@ const SideNav = () => {
       </Link>
       <Link href={"/cart"}>
         <Button
-          endIcon={<Chip size="small" label={cart?.length} />}
-          startIcon={<ShoppingCart />}
+          startIcon={
+            <Badge color="error" badgeContent={cart?.length}>
+              <ShoppingCart />
+            </Badge>
+          }
           variant="contained"
           className="bg-[steelblue] hover:bg-white hover:text-black w-full"
         >
