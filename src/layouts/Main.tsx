@@ -1,3 +1,4 @@
+import BottomNav from "@/components/Main/BottomNav";
 import CatNav from "@/components/Main/CatNav";
 import Header from "@/components/Main/Header";
 import SideNav from "@/components/Main/SideNav";
@@ -13,7 +14,7 @@ const Main = ({ children }: props) => {
   const dispatch = useDispatch();
 
   return (
-    <main className={`w-full`}>
+    <main className={`w-full min-h-screen`}>
       <Header />
       <Stack spacing={2} direction="row" className="my-5">
         <SideNav />
@@ -28,6 +29,7 @@ const Main = ({ children }: props) => {
         <Divider orientation="vertical" />
         <CatNav />
       </div> */}
+      <BottomNav />
     </main>
   );
 };

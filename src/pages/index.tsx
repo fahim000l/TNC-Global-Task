@@ -39,7 +39,7 @@ export default function Home() {
           fullWidth
           label={"Search meal by name"}
         />
-        <div className="grid lg:grid-cols-4 grid-cols-1 gap-3 mt-2">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-3 mt-2">
           {mealsLoading || !requiredMeals
             ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((count: number) => (
                 <div key={count} className="flex flex-col gap-4 w-52">
