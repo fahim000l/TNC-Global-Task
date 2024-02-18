@@ -31,8 +31,8 @@ const drinkDetails = () => {
             </span>{" "}
           </p>
           <p>
-            Area :{" "}
-            <span className="font-bold">{drinks?.drinks?.[0]?.strArea}</span>{" "}
+            Glass Type :{" "}
+            <span className="font-bold">{drinks?.drinks?.[0]?.strGlass}</span>{" "}
           </p>
           <p>{drinks?.drinks?.[0]?.strInstructions}</p>
         </div>

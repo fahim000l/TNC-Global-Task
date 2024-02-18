@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const SideNav = () => {
   return (
-    <div className="w-[10%] flex flex-col space-y-2 justify-start pl-2">
+    <div className="w-[10%] lg:flex hidden flex-col space-y-2 justify-start pl-2">
       <Link href={"/"}>
         <Button
           startIcon={<DinnerDining />}

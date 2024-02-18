@@ -8,8 +8,8 @@ const CatNav = () => {
   const { categories } = useGetCategories();
 
   return (
-    <div>
-      <div className="mb-2 flex flex-col space-y-2">
+    <div className="hidden lg:inline">
+      <div className="mb-2 lg:flex hidden flex-col space-y-2">
         <p className="text-3xl font-bold">
           Meals <span className="text-[steelblue]">Categories</span>{" "}
         </p>

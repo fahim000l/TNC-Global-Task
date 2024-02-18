@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Main>
       <div>
-        <p className="text-5xl font-bold mb-5">
+        <p className="lg:text-5xl text-xl font-bold mb-5">
           Our <span className="text-[steelblue]">Meals</span>{" "}
         </p>
         <div className="grid lg:grid-cols-4 grid-cols-1 gap-3">

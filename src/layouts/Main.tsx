@@ -2,21 +2,24 @@ import CatNav from "@/components/Main/CatNav";
 import Header from "@/components/Main/Header";
 import SideNav from "@/components/Main/SideNav";
 import { Divider, Stack } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 interface props {
   children: React.ReactNode;
 }
 
 const Main = ({ children }: props) => {
+  const dispatch = useDispatch();
+
   return (
     <main className={`w-full`}>
       <Header />
       <Stack spacing={2} direction="row" className="my-5">
         <SideNav />
-        <div className="divider divider-horizontal "></div>
+        <div className="lg:divider lg:divider-horizontal hidden"></div>
         {children}
-        <div className="divider divider-horizontal "></div>
+        <div className="lg:divider lg:divider-horizontal hidden"></div>
         <CatNav />
       </Stack>
       {/* <div className="flex justify-evenly my-5">

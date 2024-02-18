@@ -14,7 +14,7 @@ const categoryMeals = () => {
   return (
     <Main>
       <div>
-        <p className="text-5xl font-bold mb-5">
+        <p className="lg:text-5xl text-xl font-bold mb-5">
           Meals of{" "}
           <span className="text-[steelblue]">{categoryName} category </span>{" "}
         </p>
