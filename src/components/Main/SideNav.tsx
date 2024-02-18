@@ -2,8 +2,13 @@ import { Button, Stack } from "@mui/material";
 import React from "react";
 import { DinnerDining, LocalBar, ShoppingCart } from "@mui/icons-material";
 import Link from "next/link";
+import { Chip } from "@mui/material";
+import { useSelector } from "react-redux";
+import { RootStateType } from "@/app/store";
 
 const SideNav = () => {
+  const { cart } = useSelector((state: RootStateType) => state.cart);
+
   return (
     <div className="w-[10%] lg:flex hidden flex-col space-y-2 justify-start pl-2">
       <Link href={"/"}>
@@ -26,6 +31,7 @@ const SideNav = () => {
       </Link>
       <Link href={"/cart"}>
         <Button
+          endIcon={<Chip size="small" label={cart?.length} />}
           startIcon={<ShoppingCart />}
           variant="contained"
           className="bg-[steelblue] hover:bg-white hover:text-black w-full"
