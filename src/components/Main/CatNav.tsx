@@ -5,7 +5,7 @@ import { Button } from "@mui/joy";
 import Link from "next/link";
 
 const CatNav = () => {
-  const { categories } = useGetCategories();
+  const { categories, categoriesLoading } = useGetCategories();
 
   return (
     <div className="hidden lg:inline">
@@ -18,9 +18,20 @@ const CatNav = () => {
         </Link>
       </div>
       <div className="flex flex-col space-y-3">
-        {categories?.categories?.map((category: any) => (
-          <SideCatCard key={category?.idCategory} category={category} />
-        ))}
+        {categoriesLoading
+          ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((count) => (
+              <div key={count} className="flex gap-4 w-52">
+                <div className="skeleton h-32 w-full"></div>
+                <div className="flex flex-col gap-4">
+                  <div className="skeleton h-4 w-28"></div>
+                  <div className="skeleton h-4 w-full"></div>
+                  <div className="skeleton h-4 w-full"></div>
+                </div>
+              </div>
+            ))
+          : categories?.categories?.map((category: any) => (
+              <SideCatCard key={category?.idCategory} category={category} />
+            ))}
       </div>
     </div>
   );
