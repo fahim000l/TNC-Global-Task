@@ -5,6 +5,7 @@ import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import Chip from "@mui/joy/Chip";
 import Typography from "@mui/joy/Typography";
+import { useRouter } from "next/router";
 
 interface props {
   category: any;
@@ -12,10 +13,14 @@ interface props {
 
 export default function SideCatCard({ category }: props) {
   //   width: 320,
+
+  const { push } = useRouter();
   return (
     <Card
+      onClick={() => push(`/category/${category?.strCategory}`)}
       variant="outlined"
       orientation="horizontal"
+      className="cursor-pointer"
       sx={{
         "&:hover": {
           boxShadow: "md",
@@ -30,24 +35,6 @@ export default function SideCatCard({ category }: props) {
         <Typography level="title-lg" id="card-description">
           {category?.strCategory}
         </Typography>
-        <Typography level="body-sm" aria-describedby="card-description" mb={1}>
-          <Link
-            overlay
-            underline="none"
-            href="#interactive-card"
-            sx={{ color: "text.tertiary" }}
-          >
-            California, USA
-          </Link>
-        </Typography>
-        <Chip
-          variant="outlined"
-          color="primary"
-          size="sm"
-          sx={{ pointerEvents: "none" }}
-        >
-          Cool weather all day long
-        </Chip>
       </CardContent>
     </Card>
   );

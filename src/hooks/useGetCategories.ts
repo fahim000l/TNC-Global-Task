@@ -7,7 +7,7 @@ const useGetCategories = () => {
     refetch: categoriesRefetch,
     isLoading: categoriesLoading,
   } = useQuery({
-    queryKey: [],
+    queryKey: ["api/json/v1/1/categories.php"],
     queryFn: () =>
       fetch("https://www.themealdb.com/api/json/v1/1/categories.php").then(
         (res) => res.json()

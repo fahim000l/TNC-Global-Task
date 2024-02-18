@@ -7,7 +7,7 @@ const useGetAllDrinks = () => {
     refetch: drinksRefetch,
     isLoading: drinksLoading,
   } = useQuery({
-    queryKey: [],
+    queryKey: ["api/json/v1/1/search.php?s="],
     queryFn: () =>
       fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=").then(
         (res) => res.json()

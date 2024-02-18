@@ -5,7 +5,8 @@ import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
-import BookmarkAdd from "@mui/icons-material/BookmarkAddOutlined";
+import { AddShoppingCart } from "@mui/icons-material";
+import { useRouter } from "next/router";
 
 interface props {
   drink: any;
@@ -13,13 +14,15 @@ interface props {
 // sx={{ width: 320 }}
 
 export default function DrinksCard({ drink }: props) {
-  console.log(drink);
+  const { push } = useRouter();
 
   return (
-    <Card>
+    <Card
+      onClick={() => push(`/drink-details/${drink?.idDrink}`)}
+      sx={{ width: 200 }}
+    >
       <div>
         <Typography level="title-lg">{drink?.strDrink}</Typography>
-        <Typography level="body-sm">April 24 to May 02, 2021</Typography>
         <IconButton
           aria-label="bookmark Bahamas Islands"
           variant="plain"
@@ -27,7 +30,7 @@ export default function DrinksCard({ drink }: props) {
           size="sm"
           sx={{ position: "absolute", top: "0.875rem", right: "0.5rem" }}
         >
-          <BookmarkAdd />
+          <AddShoppingCart />
         </IconButton>
       </div>
       <AspectRatio minHeight="120px" maxHeight="200px">

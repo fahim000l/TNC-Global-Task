@@ -1,16 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import SideCatCard from "../home/SideCatCard";
 import useGetCategories from "@/hooks/useGetCategories";
+import { Button } from "@mui/joy";
+import Link from "next/link";
 
 const CatNav = () => {
   const { categories } = useGetCategories();
 
   return (
     <div>
-      <p className="text-[steelblue] mb-2 text-3xl font-bold">Categories</p>
+      <div className="mb-2 flex flex-col space-y-2">
+        <p className="text-3xl font-bold">
+          Meals <span className="text-[steelblue]">Categories</span>{" "}
+        </p>
+        <Link href={"/categories"}>
+          <Button variant="outlined">Show All</Button>
+        </Link>
+      </div>
       <div className="flex flex-col space-y-3">
         {categories?.categories?.map((category: any) => (
-          <SideCatCard category={category} />
+          <SideCatCard key={category?.idCategory} category={category} />
         ))}
       </div>
     </div>
